@@ -1,0 +1,41 @@
+.User {
+  display: grid;
+  grid-template-columns: 1fr 128px;
+  background: #e1eaff;
+  box-shadow: 1px 1px 5px 1px #000000;
+  padding: 10px 15px;
+}
+
+.user-name {
+  font-size: 1.25rem;
+  font-weight: bolder;
+  margin-bottom: 8px;
+}
+
+.age {
+  &-container {
+    margin-bottom: 16px;
+  }
+
+  &-label {
+    font-weight: bolder;
+  }
+}
+
+.phone {
+  margin-top: 16px;
+}
+
+.delete {
+  &-container {
+    grid-column: 2;
+    text-align: end;
+  }
+  &-button {
+    margin: 0;
+    padding: 0;
+    background: transparent;
+    border: none;
+    cursor: pointer;
+  }
+}
