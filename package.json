@@ -1,0 +1,22 @@
+{
+  "name": "simple-user-list",
+  "version": "1.0.0",
+  "description": "The purpose of this repo is to expore the differences in various web technologies by implementing the same basic app in a variety of technologies.  The app is relatively simple but is broken up into small pieces in order to explore component communication and file organization.",
+  "main": "index.js",
+  "dependencies": {
+    "cypress": "^4.0.2"
+  },
+  "devDependencies": {},
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/dstanich/simple-user-list.git"
+  },
+  "author": "",
+  "bugs": {
+    "url": "https://github.com/dstanich/simple-user-list/issues"
+  },
+  "homepage": "https://github.com/dstanich/simple-user-list#readme"
+}

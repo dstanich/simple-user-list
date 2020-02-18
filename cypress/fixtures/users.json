@@ -1,0 +1,48 @@
+{
+  "results": [
+    {
+      "name": { "title": "Miss", "first": "Pretend", "last": "Person" },
+      "location": {
+        "street": { "number": 123, "name": "Fake St." },
+        "city": "Rochester",
+        "state": "MN",
+        "country": "USA",
+        "postcode": 55901
+      },
+      "email": "pretend.person@example.com",
+      "dob": { "date": "1953-10-18T18:39:23.905Z", "age": 67 },
+      "phone": "0425-4160790",
+      "id": { "name": "", "value": null },
+      "picture": {
+        "large": "https://randomuser.me/api/portraits/women/0.jpg",
+        "medium": "https://randomuser.me/api/portraits/med/women/0.jpg",
+        "thumbnail": "https://randomuser.me/api/portraits/thumb/women/0.jpg"
+      }
+    },
+    {
+      "name": { "title": "Mr", "first": "Second", "last": "Faker" },
+      "location": {
+        "street": { "number": 456, "name": "Boring Ave." },
+        "city": "Minneapolis",
+        "state": "MN",
+        "country": "USA",
+        "postcode": 55111
+      },
+      "email": "second.person@example.com",
+      "dob": { "date": "1953-10-18T18:39:23.905Z", "age": 70 },
+      "phone": "507-555-5555",
+      "id": { "name": "", "value": null },
+      "picture": {
+        "large": "https://randomuser.me/api/portraits/women/1.jpg",
+        "medium": "https://randomuser.me/api/portraits/med/women/1.jpg",
+        "thumbnail": "https://randomuser.me/api/portraits/thumb/women/1.jpg"
+      }
+    }
+  ],
+  "info": {
+    "seed": "9b684d28ad70980b",
+    "results": 1,
+    "page": 1,
+    "version": "1.3"
+  }
+}
