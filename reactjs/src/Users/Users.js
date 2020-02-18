@@ -10,6 +10,9 @@ function Users(props) {
 
   useEffect(() => {
     const { count, seed } = search;
+    if (count === undefined) {
+      return;
+    }
 
     let url = `https://randomuser.me/api/?results=${count}`;
     url = seed ? `${url}&seed=${seed}` : url;

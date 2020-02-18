@@ -17,13 +17,15 @@ function User(props) {
           <span className="age-label">Age:</span> {dob.age}
         </div>
 
-        <div>
-          {location.street.number} {location.street.name}
+        <div className="address">
+          <div>
+            {location.street.number} {location.street.name}
+          </div>
+          <div>
+            {location.city}, {location.state} {location.postcode}
+          </div>
+          <div>{location.country}</div>
         </div>
-        <div>
-          {location.city}, {location.state}
-        </div>
-        <div>{location.country}</div>
 
         <div className="phone">{phone}</div>
       </div>

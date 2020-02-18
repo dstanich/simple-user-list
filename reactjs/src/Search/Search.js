@@ -10,12 +10,14 @@ function Search(props) {
   return (
     <div className={className + ' Search'}>
       <input
+        id="search-count"
         type="number"
         placeholder="Count"
         aria-label="Number of users"
         ref={userCount}
       />
       <input
+        id="search-seed"
         type="text"
         placeholder="Seed"
         aria-label="Random generator seed"
