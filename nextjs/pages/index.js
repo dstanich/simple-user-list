@@ -1,5 +1,7 @@
 import Head from 'next/head';
-import styles from '../styles/Home.module.css';
+
+import styles from '../styles/Home.module.scss';
+import Title from '../components/Title';
 
 export default function Home() {
   return (
@@ -7,7 +9,7 @@ export default function Home() {
       <Head>
         <title>Next.js User List</title>
       </Head>
-      abc
+      <Title text="Next.js User List" />
     </div>
   );
 }
