@@ -4,6 +4,7 @@ import { useState } from 'react';
 import styles from '../styles/Home.module.scss';
 import Title from '../components/Title';
 import Search from '../components/Search';
+import Users from '../components/Users';
 
 export default function Home() {
   const [search, setSearch] = useState({});
@@ -21,7 +22,7 @@ export default function Home() {
           className={styles['content-container']}
           searchChanged={searchChanged}
         ></Search>
-        {/* <Users className="content-container" search={search}></Users> */}
+        <Users className={styles['content-container']} search={search}></Users>
 
         <div className={styles.notices}>
           Mock user data provided by{' '}

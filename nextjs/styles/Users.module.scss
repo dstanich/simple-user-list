@@ -1,0 +1,12 @@
+.users {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  column-gap: 16px;
+  row-gap: 16px;
+}
+
+@media only screen and (max-width: 600px) {
+  .users {
+    grid-template-columns: 1fr;
+  }
+}
