@@ -5,7 +5,6 @@ import styles from '../styles/UserCard.module.scss';
 function UserCard(props) {
   const { data, removeUser } = props;
   const { name, location, dob, phone, picture, login } = data;
-  console.log(login);
 
   return (
     <div className={styles.user}>

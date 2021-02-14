@@ -4,12 +4,11 @@ import styles from '../Styles/Users.module.scss';
 import UserCard from './UserCard';
 
 function Users(props) {
-  const { className, search } = props;
+  const { className, count, seed } = props;
 
   const [users, setUsers] = useState();
 
   useEffect(() => {
-    const { count, seed } = search;
     if (count === undefined) {
       return;
     }
@@ -19,14 +18,14 @@ function Users(props) {
     fetch(url)
       .then((result) => result.json())
       .then((data) => setUsers(data.results));
-  }, [search]);
+  }, [count, seed]);
 
   const removeUser = (userToDel) => {
     const filteredUsers = users.filter((cur) => cur !== userToDel);
     setUsers(filteredUsers);
   };
 
-  if (!search || !search.count) {
+  if (count === undefined) {
     return null;
   }
 

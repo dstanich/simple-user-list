@@ -1,22 +1,30 @@
-import Head from 'next/head';
-import { useState } from 'react';
+import { useContext } from 'react';
 
+import { AppContext } from '../context/App';
 import styles from '../styles/Home.module.scss';
 import Search from '../components/Search';
 import Users from '../components/Users';
 
 export default function Home() {
-  const [search, setSearch] = useState({});
+  const {
+    search: { count, seed, setSearch },
+  } = useContext(AppContext);
 
-  const searchChanged = (count, seed) => setSearch({ count, seed });
+  const searchChanged = (inCount, inSeed) => setSearch(inCount, inSeed);
 
   return (
     <>
       <Search
         className={styles['content-container']}
+        count={count}
+        seed={seed}
         searchChanged={searchChanged}
       ></Search>
-      <Users className={styles['content-container']} search={search}></Users>
+      <Users
+        className={styles['content-container']}
+        count={count}
+        seed={seed}
+      ></Users>
 
       <div className={styles.notices}>
         Mock user data provided by{' '}
