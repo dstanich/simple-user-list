@@ -9,14 +9,21 @@ import Title from '../components/Title';
 function MyApp({ Component, pageProps }) {
   const [count, setCount] = useState();
   const [seed, setSeed] = useState();
+  const [users, setUsers] = useState();
 
   const setSearch = useCallback((inCount, inSeed) => {
     setCount(inCount);
     setSeed(inSeed);
+    setUsers([]); // Reset the user list
   });
 
   return (
-    <AppContext.Provider value={{ search: { count, seed, setSearch } }}>
+    <AppContext.Provider
+      value={{
+        search: { count, seed, setSearch },
+        users: { items: users, setUsers },
+      }}
+    >
       <Head>
         <title>Next.js User List</title>
       </Head>

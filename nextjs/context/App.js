@@ -6,4 +6,8 @@ export const AppContext = createContext({
     seed: '',
     setSearch: () => {},
   },
+  users: {
+    items: [],
+    setUsers: () => {},
+  },
 });

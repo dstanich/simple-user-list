@@ -1,15 +1,13 @@
-import React, { useEffect, useState } from 'react';
+import React, { useEffect } from 'react';
 
 import styles from '../Styles/Users.module.scss';
 import UserCard from './UserCard';
 
 function Users(props) {
-  const { className, count, seed } = props;
-
-  const [users, setUsers] = useState();
+  const { className, count, seed, users, setUsers } = props;
 
   useEffect(() => {
-    if (count === undefined) {
+    if (count === undefined || (users && users.length > 0)) {
       return;
     }
 
@@ -18,7 +16,7 @@ function Users(props) {
     fetch(url)
       .then((result) => result.json())
       .then((data) => setUsers(data.results));
-  }, [count, seed]);
+  }, [users, count, seed]);
 
   const removeUser = (userToDel) => {
     const filteredUsers = users.filter((cur) => cur !== userToDel);

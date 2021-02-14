@@ -8,6 +8,7 @@ import Users from '../components/Users';
 export default function Home() {
   const {
     search: { count, seed, setSearch },
+    users: { items, setUsers },
   } = useContext(AppContext);
 
   const searchChanged = (inCount, inSeed) => setSearch(inCount, inSeed);
@@ -24,6 +25,8 @@ export default function Home() {
         className={styles['content-container']}
         count={count}
         seed={seed}
+        users={items}
+        setUsers={setUsers}
       ></Users>
 
       <div className={styles.notices}>
