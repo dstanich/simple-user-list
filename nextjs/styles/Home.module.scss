@@ -1,17 +1,3 @@
-.app {
-  display: flex;
-  flex-direction: column;
-  height: 100%;
-  background: #aeb7d5;
-  overflow: hidden;
-}
-
-.scrollable-area {
-  display: block;
-  flex: 1 1 auto;
-  overflow: auto;
-}
-
 .content-container {
   margin: 2rem 1rem 0 1rem;
 }

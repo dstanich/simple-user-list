@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from 'react';
 
 import styles from '../Styles/Users.module.scss';
-import User from './User';
+import UserCard from './UserCard';
 
 function Users(props) {
   const { className, search } = props;
@@ -34,11 +34,11 @@ function Users(props) {
     return (
       <div className={className + ' ' + styles.users}>
         {users.map((user) => (
-          <User
-            key={user.email + user.name.first + user.name.last + user.phone}
+          <UserCard
+            key={user.login.uuid}
             data={user}
             removeUser={removeUser}
-          ></User>
+          ></UserCard>
         ))}
       </div>
     );

@@ -1,17 +1,20 @@
-import React from 'react';
+import Link from 'next/link';
 
-import styles from '../styles/User.module.scss';
+import styles from '../styles/UserCard.module.scss';
 
-function User(props) {
+function UserCard(props) {
   const { data, removeUser } = props;
-  const { name, location, dob, phone, picture } = data;
+  const { name, location, dob, phone, picture, login } = data;
+  console.log(login);
 
   return (
     <div className={styles.user}>
       <div>
-        <div className={styles['user-name']}>
-          {name.first} {name.last}
-        </div>
+        <Link href={`/user/${login.uuid}`} className={styles['user-name']}>
+          <a href="">
+            {name.first} {name.last}
+          </a>
+        </Link>
 
         <div className={styles['age-container']}>
           <span className={styles['age-label']}>Age:</span> {dob.age}
@@ -46,4 +49,4 @@ function User(props) {
   );
 }
 
-export default User;
+export default UserCard;
