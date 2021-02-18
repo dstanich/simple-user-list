@@ -1,15 +1,21 @@
-import { useContext } from 'react';
+import { useContext, useEffect } from 'react';
 
 import { AppContext } from '../context/App';
 import styles from '../styles/Home.module.scss';
 import Search from '../components/Search';
 import Users from '../components/Users';
 
-export default function Home() {
+export default function Home(props) {
   const {
     search: { count, seed, setSearch },
     users: { items, setUsers },
   } = useContext(AppContext);
+
+  // Initial load values, from getStaticProps()
+  useEffect(() => {
+    setSearch(props.count, props.seed);
+    setUsers(props.users);
+  }, [props.count, props.seed, props.users]);
 
   const searchChanged = (inCount, inSeed) => setSearch(inCount, inSeed);
 
@@ -41,4 +47,20 @@ export default function Home() {
       </div>
     </>
   );
+}
+
+/**
+ * Called at build time
+ * Get all users and pass them to the component as a default search.
+ */
+export async function getStaticProps() {
+  const count = 100;
+  const seed = 'demo';
+  const res = await fetch(
+    `https://randomuser.me/api/?results=${count}&seed=${seed}`
+  );
+  const { results } = await res.json();
+  return {
+    props: { users: results, count, seed },
+  };
 }

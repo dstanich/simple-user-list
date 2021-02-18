@@ -3,13 +3,16 @@ import Link from 'next/link';
 import styles from '../styles/UserCard.module.scss';
 
 function UserCard(props) {
-  const { data, removeUser } = props;
+  const { data, removeUser, seed } = props;
   const { name, location, dob, phone, picture, login } = data;
 
   return (
     <div className={styles.user}>
       <div>
-        <Link href={`/user/${login.uuid}`} className={styles['user-name']}>
+        <Link
+          href={`/${seed}/user/${login.uuid}`}
+          className={styles['user-name']}
+        >
           <a href="">
             {name.first} {name.last}
           </a>

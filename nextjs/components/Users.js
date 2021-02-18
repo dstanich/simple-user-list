@@ -6,6 +6,7 @@ import UserCard from './UserCard';
 function Users(props) {
   const { className, count, seed, users, setUsers } = props;
 
+  // When the search is changed execute the API call on the client
   useEffect(() => {
     if (count === undefined || (users && users.length > 0)) {
       return;
@@ -34,6 +35,7 @@ function Users(props) {
           <UserCard
             key={user.login.uuid}
             data={user}
+            seed={seed}
             removeUser={removeUser}
           ></UserCard>
         ))}
