@@ -1,4 +1,5 @@
 import Link from 'next/link';
+import Image from 'next/image';
 
 import styles from '../styles/UserCard.module.scss';
 
@@ -35,7 +36,9 @@ function UserCard(props) {
         <div className={styles.phone}>{phone}</div>
       </div>
 
-      <img src={picture.large} alt="" />
+      <div>
+        <Image src={picture.large} alt="" width="128" height="128" />
+      </div>
 
       <div className={styles['delete-container']}>
         <button

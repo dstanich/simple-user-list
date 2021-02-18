@@ -1,4 +1,5 @@
 import React from 'react';
+import Image from 'next/image';
 
 import './Title.scss';
 import github from './GitHub-Mark-Light-32px.png';
@@ -16,7 +17,7 @@ function Title(props) {
         target="_blank"
         rel="noopener noreferrer"
       >
-        <img src={github} alt="" />
+        <Image src={github} alt="" />
       </a>
     </div>
   );

@@ -1,4 +1,5 @@
 import React from 'react';
+import Image from 'next/image';
 
 import styles from '../styles/Title.module.scss';
 
@@ -15,7 +16,12 @@ function Title(props) {
         target="_blank"
         rel="noopener noreferrer"
       >
-        <img src="/images/GitHub-Mark-Light-32px.png" alt="" />
+        <Image
+          src="/images/GitHub-Mark-Light-32px.png"
+          alt=""
+          width="32"
+          height="32"
+        />
       </a>
     </div>
   );

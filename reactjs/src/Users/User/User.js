@@ -1,4 +1,5 @@
 import React from 'react';
+import Image from 'next/image';
 
 import './User.scss';
 
@@ -30,7 +31,7 @@ function User(props) {
         <div className="phone">{phone}</div>
       </div>
 
-      <img src={picture.large} alt="" />
+      <Image src={picture.large} alt="" />
 
       <div className="delete-container">
         <button className="delete-button" onClick={() => removeUser(data)}>
