@@ -55,7 +55,7 @@ export default function Home(props) {
  * get these values as input props.
  */
 export async function getStaticProps() {
-  const count = 100;
+  const count = 50;
   const seed = 'demo';
   const res = await fetch(
     `https://randomuser.me/api/?results=${count}&seed=${seed}`

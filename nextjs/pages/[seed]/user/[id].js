@@ -36,7 +36,7 @@ export default function UserDetails(props) {
   );
 }
 
-const count = 100;
+const count = 50;
 const initialSeed = 'demo';
 
 /**

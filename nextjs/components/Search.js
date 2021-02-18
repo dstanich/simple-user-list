@@ -2,6 +2,8 @@ import React, { useRef } from 'react';
 
 import styles from '../styles/Search.module.scss';
 
+const MAX_COUNT = 50;
+
 function Search(props) {
   const { className, count, seed, searchChanged } = props;
   const userCountRef = useRef(null);
@@ -16,6 +18,7 @@ function Search(props) {
         aria-label="Number of users"
         ref={userCountRef}
         defaultValue={count}
+        max={MAX_COUNT}
       />
       <input
         id="search-seed"
@@ -27,9 +30,12 @@ function Search(props) {
       />
       <button
         className={styles['search-button']}
-        onClick={() =>
-          searchChanged(userCountRef.current.value, seedRef.current.value)
-        }
+        onClick={() => {
+          if (userCountRef.current.value > MAX_COUNT) {
+            userCountRef.current.value = MAX_COUNT;
+          }
+          searchChanged(userCountRef.current.value, seedRef.current.value);
+        }}
       >
         Search
       </button>
