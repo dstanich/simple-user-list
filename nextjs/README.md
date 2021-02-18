@@ -1,34 +1,29 @@
-This is a [Next.js](https://nextjs.org/) project bootstrapped with [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app).
+# Next.js Simple User List
+Simple User List implemented with [Next.js](https://nextjs.org/).
+
+## Unique Features
+Next.js enables some unique features compared to other implementations in this repo.
+
+### Partially Server Rendered
+One of the major benefits of Next.js is server rendering a lot of the static HTML so that the payload can be lowered when delivering content to the browser.  This project makes use of that by default for using Next.js, but also by using some of the other features described in this section.  Because of this feature, after building the project you would need to also package the Next.js server with the build to gain the benefit of the server features.
+
+### Pre-built Data and Paths
+The seed of `demo` is pre-built using the `getStaticProps()` and `getStaticPaths()` features of Next.js.  This enables immediate loading of the main page with the content from the `demo` seed.  Clicking into one of the users to see their data is also immediate and pre-built.
+
+The `fallback` property is set to `true` meaning that any path which is not pre-built will force Next.js to call `getStaticProps()` and build it upon being requested and then cache it for anyone in the future.
+
+### API Enablement
+Next.js allows the developer to create APIs within the same code base.  This implementation of the Simple User List doesn't use it, but there is a sample API provided in the `pages/api` directory and can be executed by going to http://localhost:3000/api/hello.
 
 ## Getting Started
+1. Clone repo
+1. `cd nextjs`
+2. `npm run dev`
 
-First, run the development server:
+## Building and Running Production
+Since this project is build with `fallback` set to `true`, it cannot be exported as pure HTML and static assets.
 
-```bash
-npm run dev
-# or
-yarn dev
-```
+1. Run `npm run build` which outputs the optimized version into `.next/`.  Note the various pieces that are built including static HTML files and common shared chunks.
+1. Run `npm start` to run the version in `.next/`
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
-
-You can start editing the page by modifying `pages/index.js`. The page auto-updates as you edit the file.
-
-[API routes](https://nextjs.org/docs/api-routes/introduction) can be accessed on [http://localhost:3000/api/hello](http://localhost:3000/api/hello). This endpoint can be edited in `pages/api/hello.js`.
-
-The `pages/api` directory is mapped to `/api/*`. Files in this directory are treated as [API routes](https://nextjs.org/docs/api-routes/introduction) instead of React pages.
-
-## Learn More
-
-To learn more about Next.js, take a look at the following resources:
-
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
-
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js/) - your feedback and contributions are welcome!
-
-## Deploy on Vercel
-
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
-
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/deployment) for more details.
+In the optimized version, the HTML has been pre-generated and loading is immediate.  In development, it is generated on demand.
