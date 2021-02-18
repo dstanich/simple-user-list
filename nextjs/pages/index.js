@@ -51,7 +51,8 @@ export default function Home(props) {
 
 /**
  * Called at build time
- * Get all users and pass them to the component as a default search.
+ * Gets all the data for the default search.  The component will then
+ * get these values as input props.
  */
 export async function getStaticProps() {
   const count = 100;

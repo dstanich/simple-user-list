@@ -41,8 +41,9 @@ const initialSeed = 'demo';
 
 /**
  * Called at build time
- * Get all users and pass them in as prop so the page so we can read the
- * data for the users.
+ * Given the input data of the seed, fetch all the users.  This is used
+ * at build time for pre-rendering things but also for fallback paths
+ * when trying to access something in a seed that is not preloaded.
  */
 export async function getStaticProps(data) {
   const {
