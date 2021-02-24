@@ -21,6 +21,8 @@ Next.js allows the developer to create APIs within the same code base.  This imp
 2. `npm run dev`
 
 ## Building and Running Production
+**IMPORTANT**: This project currently has a problem where the build will break on fast computers that execute the build to quickly.  This happens because the Random User API is called too quickly during the static generation and the build hits an API threshold limit.  There are likely ways around this, but for now this is a limitation until I resolve it.
+
 Since this project is build with `fallback` set to `true`, it cannot be exported as pure HTML and static assets.
 
 1. Run `npm run build` which outputs the optimized version into `.next/`.  Note the various pieces that are built including static HTML files and common shared chunks.
